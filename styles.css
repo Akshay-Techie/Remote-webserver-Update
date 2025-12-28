@@ -91,6 +91,40 @@ body{
 .theme-aurora{--bg: linear-gradient(180deg,#001021 0%, #00333d 40%, #0f254a 100%); --card: rgba(8,20,30,0.6); --muted:#a0ffd8; --accent1:#7cffc7; --accent2:#5f7bff}
 .theme-pastel{--bg: linear-gradient(180deg,#f7f3ff 0%, #e6fbff 50%, #fef6ef 100%); --card: rgba(255,255,255,0.06); --muted:#6b6b6b; --accent1:#ff9ec3; --accent2:#8ed1fc; color: #072033}
 
+/* Glossy lavender theme */
+.theme-lavender{
+  --bg: linear-gradient(180deg,#f6f0ff 0%, #efe7ff 40%, #e6dcff 100%);
+  --card: rgba(255,255,255,0.9);
+  --muted: #6e5a7a;
+  --accent1: #caa7ff;
+  --accent2: #8f6bff;
+  color: #1b0f2a;
+}
+
+/* glossy sheen overlay for lavender theme */
+body.theme-lavender::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background: radial-gradient(600px 300px at 15% 10%, rgba(255,255,255,0.65), rgba(255,255,255,0.0) 35%),
+              linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.0));
+  mix-blend-mode: overlay;
+  opacity:0.98;
+  transform: translateX(-30%);
+  animation: lavenderSheen 8s linear infinite;
+}
+
+@keyframes lavenderSheen{
+  0%{ transform: translateX(-30%);} 
+  50%{ transform: translateX(30%);} 
+  100%{ transform: translateX(-30%);} 
+}
+
+/* ensure body text sits above sheen */
+body.theme-lavender > *{position:relative;z-index:2}
+
 /* theme switcher styles */
 .theme-switcher select{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:0.35rem;border-radius:8px}
 .theme-switcher{margin-left:1rem}
