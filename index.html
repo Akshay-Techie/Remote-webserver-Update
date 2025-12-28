@@ -6,7 +6,7 @@
     <title>Nice Website — Welcome</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -43,7 +43,19 @@
             </div>
           </div>
           <div class="hero-figure">
-            <div class="card-figure">
+            <!-- decorative floating blob (SVG) -->
+            <svg class="hero-blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="g1" x1="0%" x2="100%">
+                  <stop offset="0%" stop-color="var(--accent1)" stop-opacity="0.95" />
+                  <stop offset="100%" stop-color="var(--accent2)" stop-opacity="0.95" />
+                </linearGradient>
+              </defs>
+              <g transform="translate(300,300)">
+                <path d="M120,-154C163,-118,191,-76,197,-31C203,14,187,61,157,98C127,136,84,162,38,185C-8,208,-54,227,-100,215C-146,203,-192,160,-206,110C-220,60,-202,3,-186,-49C-170,-101,-156,-148,-116,-178C-76,-208,-38,-221,4,-227C46,-233,92,-240,120,-154Z" fill="url(#g1)"/>
+              </g>
+            </svg>
+            <div class="card-figure reveal">
               <h3>Starter Preview</h3>
               <p>Responsive layout, accessible markup, and subtle animations.</p>
             </div>
@@ -54,15 +66,15 @@
       <section id="features" class="features container">
         <h2 class="section-title">Features</h2>
         <div class="grid">
-          <article class="feature">
+          <article class="feature reveal">
             <h3>Responsive</h3>
             <p>Looks great on phones, tablets, and desktops with fluid layouts.</p>
           </article>
-          <article class="feature">
+          <article class="feature reveal">
             <h3>Performance</h3>
             <p>Simple CSS and minimal JS means fast load times and snappy UX.</p>
           </article>
-          <article class="feature">
+          <article class="feature reveal">
             <h3>Accessible</h3>
             <p>Semantic HTML and color contrast tuned for readability.</p>
           </article>
