@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nice Website — Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">Nice<span>Site</span></a>
+        <nav class="nav">
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn-outline">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Beautiful, simple websites made easy</h1>
+            <p>A clean, responsive template to showcase your product, project, or portfolio.</p>
+            <div class="hero-ctas">
+              <a class="btn" href="#features">Explore features</a>
+              <a class="btn ghost" href="#contact">Get in touch</a>
+            </div>
+          </div>
+          <div class="hero-figure">
+            <div class="card-figure">
+              <h3>Starter Preview</h3>
+              <p>Responsive layout, accessible markup, and subtle animations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features container">
+        <h2 class="section-title">Features</h2>
+        <div class="grid">
+          <article class="feature">
+            <h3>Responsive</h3>
+            <p>Looks great on phones, tablets, and desktops with fluid layouts.</p>
+          </article>
+          <article class="feature">
+            <h3>Performance</h3>
+            <p>Simple CSS and minimal JS means fast load times and snappy UX.</p>
+          </article>
+          <article class="feature">
+            <h3>Accessible</h3>
+            <p>Semantic HTML and color contrast tuned for readability.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about container">
+        <h2 class="section-title">About this template</h2>
+        <p>This starter page is intended as a minimal, attractive landing page you can adapt quickly. Edit the HTML, update the styles, or plug into your favorite static site host.</p>
+      </section>
+
+      <section id="contact" class="contact container">
+        <h2 class="section-title">Contact</h2>
+        <p>Send a quick message — it's client-side only here, so messages are shown locally.</p>
+        <form id="contactForm" class="contact-form" action="#" novalidate>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn" type="submit">Send message</button>
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> NiceSite — Built with care</div>
+        <div class="social">Simple starter • Customize freely</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
