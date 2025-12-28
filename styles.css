@@ -13,10 +13,11 @@ html,body{height:100%}
 body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  background:linear-gradient(180deg,var(--bg),#071024 60%);
+  background: var(--bg, linear-gradient(180deg,#0f1724,#071024 60%));
   color:#e6eef6;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  transition: background 450ms ease, color 300ms ease;
 }
 .container{max-width:var(--max-width);margin:0 auto;padding:2rem}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
@@ -59,3 +60,17 @@ body{
 
 /* small utilities */
 .muted{color:var(--muted)}
+
+/* Theme variants */
+.theme-default{--bg: linear-gradient(180deg,#0f1724,#071024 60%); --card:#0b1220; --muted:#9aa4b2; --accent1:#7c5cff; --accent2:#00d4ff}
+.theme-ocean{--bg: linear-gradient(180deg,#002b36 0%, #004e66 50%, #00121a 100%); --card: rgba(3,35,45,0.6); --muted:#9fd8ea; --accent1:#00e5ff; --accent2:#0077b6}
+.theme-sunset{--bg: linear-gradient(180deg,#ff7b7b 0%, #ffb677 50%, #2a083d 100%); --card: rgba(40,8,26,0.55); --muted:#ffd7b5; --accent1:#ff6b6b; --accent2:#ffb86b}
+.theme-aurora{--bg: linear-gradient(180deg,#001021 0%, #00333d 40%, #0f254a 100%); --card: rgba(8,20,30,0.6); --muted:#a0ffd8; --accent1:#7cffc7; --accent2:#5f7bff}
+.theme-pastel{--bg: linear-gradient(180deg,#f7f3ff 0%, #e6fbff 50%, #fef6ef 100%); --card: rgba(255,255,255,0.06); --muted:#6b6b6b; --accent1:#ff9ec3; --accent2:#8ed1fc; color: #072033}
+
+/* theme switcher styles */
+.theme-switcher select{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:0.35rem;border-radius:8px}
+.theme-switcher{margin-left:1rem}
+
+/* ensure elements using variables adapt */
+.theme-pastel .btn{color:#fff}

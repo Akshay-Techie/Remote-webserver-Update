@@ -15,4 +15,26 @@ document.addEventListener('DOMContentLoaded',function(){
       setTimeout(()=>{status.textContent=''},5000);
     });
   }
+
+  // Theme handling: apply persisted theme or default
+  const themeSelect = document.getElementById('themeSelect');
+  const saved = localStorage.getItem('siteTheme') || 'default';
+  function applyTheme(name){
+    document.body.classList.remove('theme-default','theme-ocean','theme-sunset','theme-aurora','theme-pastel');
+    const cls = 'theme-' + (name || 'default');
+    document.body.classList.add(cls);
+    if(themeSelect) themeSelect.value = name;
+    // adjust text color for pastel theme
+    if(name === 'pastel') document.body.style.color = '#072033'; else document.body.style.color = '';
+  }
+
+  applyTheme(saved);
+
+  if(themeSelect){
+    themeSelect.addEventListener('change', function(){
+      const t = themeSelect.value || 'default';
+      applyTheme(t);
+      try{ localStorage.setItem('siteTheme', t); }catch(e){}
+    });
+  }
 });
